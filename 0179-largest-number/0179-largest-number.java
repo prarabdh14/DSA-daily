@@ -11,9 +11,9 @@ class Solution {
         if (arr[0].equals("0")) return "0";
         StringBuilder sb = new StringBuilder();
 
-        for (String s : arr) 
+        for (int i = 0 ; i < arr.length ; i++) 
         {
-            sb.append(s);
+            sb.append(arr[i]);
         }
         return sb.toString();
     }
