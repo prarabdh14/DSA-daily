@@ -3,24 +3,19 @@ class Solution {
     {
         int n = nums.length;
         k = k % n;
-        int[] temp = new int[n];
-        int j = n - k; 
-        int i = 0;
-        while(j < n)
+        reverse(nums, 0 , n - 1);
+        reverse(nums , 0 , k - 1);
+        reverse(nums , k , n - 1);
+    }
+    public void reverse(int[] nums , int start, int end)
+    {
+        while(start < end)
         {
-            temp[i] = nums[j];
-            j++;
-            i++;
-        } 
-        int x = 0;
-        for(i = i ; i < n ; i++)
-        {
-            temp[i] = nums[x];
-            x++;
-        }   
-        for(int z  = 0 ; z < n ; z++)
-        {
-            nums[z] = temp[z];
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
         }
     }
 }
