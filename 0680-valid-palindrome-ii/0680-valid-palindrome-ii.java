@@ -21,12 +21,15 @@ class Solution {
     {
         while(i < j)
         {
-            if(s.charAt(i) != s.charAt(j))
+            if(s.charAt(i) == s.charAt(j))
+            {
+                i++;
+                j--;
+            }
+            else
             {
                 return false;
             }
-            i++;
-            j--;
         }
         return true;
     }
