@@ -4,21 +4,23 @@ class Solution {
         int n = s.length();
         int max_len = 0;
         int i = 0;
+        int j = 0;
         HashSet<Character> present = new HashSet<>();
 
-        while(i < n)
+        while(j < n)
         {
-            int j = i;
+            //int j = i;
             //int count =0;
-            while(j < n && present.add(s.charAt(j)))
+            while(present.contains(s.charAt(j)))
             {
                 //count++;
-                j++;
+                present.remove(s.charAt(i));
+                i++;
             }
-            present.clear();
-            if(j-i > max_len)
-            max_len = j-i;
-            i++;
+            present.add(s.charAt(j));
+            if(j-i+1 > max_len)
+            max_len = j-i+1;
+            j++;
             if(i > n - max_len)
             return max_len;
         }  
