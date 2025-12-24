@@ -19,6 +19,8 @@ class Solution {
             if(j-i > max_len)
             max_len = j-i;
             i++;
+            if(i > n - max_len)
+            return max_len;
         }  
         return max_len;  
     }
