@@ -7,15 +7,15 @@ class Solution {
         while(i < n)
         {
             int j = i;
-            int count =0;
+            //int count =0;
             HashSet<Character> present = new HashSet<>();
             while(j < n && present.add(s.charAt(j)))
             {
-                count++;
+                //count++;
                 j++;
             }
-            if(count > max_len)
-            max_len = count;
+            if(j-i > max_len)
+            max_len = j-i;
             i++;
         }  
         return max_len;  
